@@ -63,10 +63,10 @@ namespace Responsi_497787
                 cmd.Parameters.AddWithValue("_jabatan", Jabatantb.Text);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Data Users Berhasil diinputkan", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Data input successful", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn.Close();
                     Loadbtn.PerformClick();
-                    NamaKaryawantb.Text = DepKaryawantb.Text = NamaKaryawantb.Text = null;
+                    NamaKaryawantb.Text = DepKaryawantb.Text = Jabatantb.Text = null;
                 }
             }
             catch (Exception msg) {
@@ -89,7 +89,7 @@ namespace Responsi_497787
         {
             if (r == null)
             {
-                MessageBox.Show("Pilih data yang akan diupdate", "Good", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Choose which data to be updated", "Good", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -97,10 +97,41 @@ namespace Responsi_497787
                 conn.Open();
                 sql = @"SELECT FROM * ";
                 cmd = new NpgsqlCommand(sql, conn);
+
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Data updated succesfully", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Close();
+                    Loadbtn.PerformClick();
+                    NamaKaryawantb.Text = DepKaryawantb.Text = Jabatantb.Text = null;
+                    r = null;
+                }
             }
             catch (Exception msg)
             {
                 MessageBox.Show("Error:" + msg.Message, "Failed to edit data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            if (r == null)
+            {
+                MessageBox.Show("Choose which data to be deleted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to delete this data for " + r.Cells["_nama"].Value.ToString() + " ?", "Hapus Data terkonfirmasi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                try
+                {
+
+                }
+                catch (Exception msg)
+                {
+                    MessageBox.Show("Error:" + msg.Message, "Failed to delete data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
