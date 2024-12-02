@@ -42,6 +42,7 @@ namespace Responsi_497787
             this.Editbtn = new System.Windows.Forms.Button();
             this.Deletebtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Loadbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -103,27 +104,27 @@ namespace Responsi_497787
             // 
             // Insertbtn
             // 
-            this.Insertbtn.Location = new System.Drawing.Point(12, 154);
+            this.Insertbtn.Location = new System.Drawing.Point(12, 145);
             this.Insertbtn.Name = "Insertbtn";
-            this.Insertbtn.Size = new System.Drawing.Size(99, 23);
+            this.Insertbtn.Size = new System.Drawing.Size(116, 32);
             this.Insertbtn.TabIndex = 6;
             this.Insertbtn.Text = "Insert";
             this.Insertbtn.UseVisualStyleBackColor = true;
             // 
             // Editbtn
             // 
-            this.Editbtn.Location = new System.Drawing.Point(185, 154);
+            this.Editbtn.Location = new System.Drawing.Point(180, 145);
             this.Editbtn.Name = "Editbtn";
-            this.Editbtn.Size = new System.Drawing.Size(99, 23);
+            this.Editbtn.Size = new System.Drawing.Size(116, 32);
             this.Editbtn.TabIndex = 7;
             this.Editbtn.Text = "Edit";
             this.Editbtn.UseVisualStyleBackColor = true;
             // 
             // Deletebtn
             // 
-            this.Deletebtn.Location = new System.Drawing.Point(347, 154);
+            this.Deletebtn.Location = new System.Drawing.Point(330, 145);
             this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(99, 23);
+            this.Deletebtn.Size = new System.Drawing.Size(116, 32);
             this.Deletebtn.TabIndex = 8;
             this.Deletebtn.Text = "Delete";
             this.Deletebtn.UseVisualStyleBackColor = true;
@@ -133,14 +134,25 @@ namespace Responsi_497787
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 192);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(434, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 218);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // Loadbtn
+            // 
+            this.Loadbtn.Location = new System.Drawing.Point(368, 418);
+            this.Loadbtn.Name = "Loadbtn";
+            this.Loadbtn.Size = new System.Drawing.Size(78, 20);
+            this.Loadbtn.TabIndex = 10;
+            this.Loadbtn.Text = "Load Data";
+            this.Loadbtn.UseVisualStyleBackColor = true;
+            this.Loadbtn.Click += new System.EventHandler(this.Loadbtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 450);
+            this.Controls.Add(this.Loadbtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Deletebtn);
             this.Controls.Add(this.Editbtn);
@@ -173,6 +185,7 @@ namespace Responsi_497787
         private Button Editbtn;
         private Button Deletebtn;
         private DataGridView dataGridView1;
+        private Button Loadbtn;
     }
 }
 
