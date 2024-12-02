@@ -35,7 +35,7 @@ namespace Responsi_497787
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logotxt = new System.Windows.Forms.TextBox();
             this.namakaryawantxt = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.depkaryawantxt = new System.Windows.Forms.TextBox();
             this.NamaKaryawantb = new System.Windows.Forms.TextBox();
             this.DepKaryawantb = new System.Windows.Forms.TextBox();
             this.Insertbtn = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@ namespace Responsi_497787
             this.Deletebtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Loadbtn = new System.Windows.Forms.Button();
+            this.jabkaryawantxt = new System.Windows.Forms.TextBox();
+            this.Jabatantb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,16 +79,16 @@ namespace Responsi_497787
             this.namakaryawantxt.TabIndex = 2;
             this.namakaryawantxt.Text = "Nama Karyawan :";
             // 
-            // textBox1
+            // depkaryawantxt
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(12, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 16);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Dep. Karyawan   \r\n:";
+            this.depkaryawantxt.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.depkaryawantxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.depkaryawantxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.depkaryawantxt.Location = new System.Drawing.Point(12, 107);
+            this.depkaryawantxt.Name = "depkaryawantxt";
+            this.depkaryawantxt.Size = new System.Drawing.Size(120, 16);
+            this.depkaryawantxt.TabIndex = 3;
+            this.depkaryawantxt.Text = "Dep. Karyawan   \r\n:";
             // 
             // NamaKaryawantb
             // 
@@ -104,25 +106,27 @@ namespace Responsi_497787
             // 
             // Insertbtn
             // 
-            this.Insertbtn.Location = new System.Drawing.Point(12, 145);
+            this.Insertbtn.Location = new System.Drawing.Point(12, 184);
             this.Insertbtn.Name = "Insertbtn";
             this.Insertbtn.Size = new System.Drawing.Size(116, 32);
             this.Insertbtn.TabIndex = 6;
             this.Insertbtn.Text = "Insert";
             this.Insertbtn.UseVisualStyleBackColor = true;
+            this.Insertbtn.Click += new System.EventHandler(this.Insertbtn_Click);
             // 
             // Editbtn
             // 
-            this.Editbtn.Location = new System.Drawing.Point(180, 145);
+            this.Editbtn.Location = new System.Drawing.Point(180, 184);
             this.Editbtn.Name = "Editbtn";
             this.Editbtn.Size = new System.Drawing.Size(116, 32);
             this.Editbtn.TabIndex = 7;
             this.Editbtn.Text = "Edit";
             this.Editbtn.UseVisualStyleBackColor = true;
+            this.Editbtn.Click += new System.EventHandler(this.Editbtn_Click);
             // 
             // Deletebtn
             // 
-            this.Deletebtn.Location = new System.Drawing.Point(330, 145);
+            this.Deletebtn.Location = new System.Drawing.Point(330, 184);
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(116, 32);
             this.Deletebtn.TabIndex = 8;
@@ -132,14 +136,15 @@ namespace Responsi_497787
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 231);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(434, 218);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Loadbtn
             // 
-            this.Loadbtn.Location = new System.Drawing.Point(368, 418);
+            this.Loadbtn.Location = new System.Drawing.Point(368, 457);
             this.Loadbtn.Name = "Loadbtn";
             this.Loadbtn.Size = new System.Drawing.Size(78, 20);
             this.Loadbtn.TabIndex = 10;
@@ -147,11 +152,31 @@ namespace Responsi_497787
             this.Loadbtn.UseVisualStyleBackColor = true;
             this.Loadbtn.Click += new System.EventHandler(this.Loadbtn_Click);
             // 
+            // jabkaryawantxt
+            // 
+            this.jabkaryawantxt.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.jabkaryawantxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.jabkaryawantxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.jabkaryawantxt.Location = new System.Drawing.Point(12, 145);
+            this.jabkaryawantxt.Name = "jabkaryawantxt";
+            this.jabkaryawantxt.Size = new System.Drawing.Size(120, 16);
+            this.jabkaryawantxt.TabIndex = 11;
+            this.jabkaryawantxt.Text = "Jabatan                 \r\n:";
+            // 
+            // Jabatantb
+            // 
+            this.Jabatantb.Location = new System.Drawing.Point(122, 144);
+            this.Jabatantb.Name = "Jabatantb";
+            this.Jabatantb.Size = new System.Drawing.Size(162, 20);
+            this.Jabatantb.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 450);
+            this.ClientSize = new System.Drawing.Size(463, 493);
+            this.Controls.Add(this.Jabatantb);
+            this.Controls.Add(this.jabkaryawantxt);
             this.Controls.Add(this.Loadbtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Deletebtn);
@@ -159,7 +184,7 @@ namespace Responsi_497787
             this.Controls.Add(this.Insertbtn);
             this.Controls.Add(this.DepKaryawantb);
             this.Controls.Add(this.NamaKaryawantb);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.depkaryawantxt);
             this.Controls.Add(this.namakaryawantxt);
             this.Controls.Add(this.logotxt);
             this.Controls.Add(this.pictureBox1);
@@ -178,7 +203,7 @@ namespace Responsi_497787
         private PictureBox pictureBox1;
         private TextBox logotxt;
         private TextBox namakaryawantxt;
-        private TextBox textBox1;
+        private TextBox depkaryawantxt;
         private TextBox NamaKaryawantb;
         private TextBox DepKaryawantb;
         private Button Insertbtn;
@@ -186,6 +211,8 @@ namespace Responsi_497787
         private Button Deletebtn;
         private DataGridView dataGridView1;
         private Button Loadbtn;
+        private TextBox jabkaryawantxt;
+        private TextBox Jabatantb;
     }
 }
 
